@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    background-color: #333;
+    padding: 5px;
+    border-radius: 10px;
+}
+.cell.x::before {
+    content: 'X';
+    color: #ff4757;
+}
+
+.cell.circle::before {
+    content: 'O';
+    color: #2ed573;
+}
+
+/* Add this to ensure pseudo-elements work properly */
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #eee;
+}
+
+.cell.winning {
+    background-color: #90EE90;
+}
+
+.status {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #333;
+}
+
+.restart-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ebd5d5;
+    color: rgb(201, 17, 17);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.restart-btn:hover {
+    background-color: #555;
+}
